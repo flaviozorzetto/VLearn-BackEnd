@@ -7,6 +7,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,9 +20,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "TB_VLEARN_PROFESSOR")
+@SequenceGenerator(name = "vlearn_professor", sequenceName = "SQ_TB_VLEARN_PROFESSOR", allocationSize = 1)
 public class Professor {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "vlearn_professor", strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
 	private String nome;
