@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @SequenceGenerator(name = "vlearn_aluno", sequenceName = "SQ_TB_VLEARN_ALUNO", allocationSize = 1)
 public class Aluno {
 	@Id
-	@GeneratedValue(generator = "vlearn_aluno",strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "vlearn_aluno", strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
 	private String nome;

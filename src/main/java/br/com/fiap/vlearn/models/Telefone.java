@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,9 +17,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "TB_VLEARN_TELEFONE")
+@SequenceGenerator(name = "vlearn_telefone", sequenceName = "SQ_TB_VLEARN_TELEFONE", allocationSize = 1)
 public class Telefone {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(generator = "vlearn_telefone", strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
 	private String ddd;
