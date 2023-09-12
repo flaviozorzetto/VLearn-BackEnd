@@ -35,6 +35,6 @@ public class Curso {
 	private String autor;
 	@NotNull
 	private String duracao;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Professor professor;
 }

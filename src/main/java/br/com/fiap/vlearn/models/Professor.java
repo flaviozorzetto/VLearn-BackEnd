@@ -36,8 +36,8 @@ public class Professor {
 	private String idiomas;
 	@NotNull
 	private String status;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.MERGE)
 	private Login login;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private Telefone telefone;
 }
